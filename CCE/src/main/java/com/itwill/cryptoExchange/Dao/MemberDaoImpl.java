@@ -13,6 +13,7 @@ public class MemberDaoImpl implements MembersDao, testDao{
 
 	public boolean insertMember(Members members) throws Exception {
 		boolean success=false;
+		
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").
 									addAnnotatedClass(Member.class).buildSessionFactory();
 		
