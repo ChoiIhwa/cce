@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Members")
+@Table(name="members")
 public class Members {
 	
 	@Id
@@ -23,20 +23,20 @@ public class Members {
 	@Column(name="m_id")
 	private String m_id;
 	
-	@Column(name="m_password")
-	private String m_password;
-	
 	@Column(name="m_name")
 	private String m_name;
 	
+	@Column(name="m_password")
+	private String m_password;
+		
 	@Column(name="m_email")
 	private String m_email;
 	
 	@Column(name="m_ssn")
-	private	int m_ssn;
+	private	String m_ssn;
 	
-	@Column(name="m_phon")
-	private int m_phon;
+	@Column(name="m_phone")
+	private String m_phone;
 	
 	@OneToMany(mappedBy="m_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	private List<Booking> booking;
@@ -48,7 +48,7 @@ public class Members {
 	
 	
 
-	public Members(int m_no, String m_id, String m_password, String m_name, String m_email, int m_ssn, int m_phon) {
+	public Members(int m_no, String m_id, String m_password, String m_name, String m_email, String m_ssn, String m_phone) {
 		super();
 		this.m_no = m_no;
 		this.m_id = m_id;
@@ -56,19 +56,19 @@ public class Members {
 		this.m_name = m_name;
 		this.m_email = m_email;
 		this.m_ssn = m_ssn;
-		this.m_phon = m_phon;
+		this.m_phone = m_phone;
 	}
 
 
 
-	public Members(String m_id, String m_password, String m_name, String m_email, int m_ssn, int m_phon) {
+	public Members(String m_id, String m_password, String m_name, String m_email, String m_ssn, String m_phon) {
 		super();
 		this.m_id = m_id;
 		this.m_password = m_password;
 		this.m_name = m_name;
 		this.m_email = m_email;
 		this.m_ssn = m_ssn;
-		this.m_phon = m_phon;
+		this.m_phone = m_phon;
 	}
 
 
@@ -76,7 +76,7 @@ public class Members {
 	@Override
 	public String toString() {
 		return "Member [m_no=" + m_no + ", m_id=" + m_id + ", m_password=" + m_password + ", m_name=" + m_name
-				+ ", m_email=" + m_email + ", m_ssn=" + m_ssn + ", m_phon=" + m_phon + "]";
+				+ ", m_email=" + m_email + ", m_ssn=" + m_ssn + ", m_phon=" + m_phone + "]";
 	}
 
 
@@ -121,20 +121,20 @@ public class Members {
 		this.m_email = m_email;
 	}
 
-	public int getM_ssn() {
+	public String getM_ssn() {
 		return m_ssn;
 	}
 
-	public void setM_ssn(int m_ssn) {
+	public void setM_ssn(String m_ssn) {
 		this.m_ssn = m_ssn;
 	}
 
-	public int getM_phon() {
-		return m_phon;
+	public String getM_phone() {
+		return m_phone;
 	}
 
-	public void setM_phon(int m_phon) {
-		this.m_phon = m_phon;
+	public void setM_phone(String m_phone) {
+		this.m_phone = m_phone;
 	}
 	
 	

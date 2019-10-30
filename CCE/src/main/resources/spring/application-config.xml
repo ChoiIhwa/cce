@@ -5,8 +5,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <!-- Uncomment and add your base-package here:
-         <context:component-scan
-            base-package="org.springframework.samples.service"/>  -->
-
+   <!-- Uncomment and add your base-package here:  -->
+     <context:component-scan
+            base-package="com.itwill.cryptoExchange.Dto"/> 
+	<bean  id="SessionFactory" 
+			class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" 
+		          value="classpath:hibernate.config.xml"/>     
+	</bean>
+	
 </beans>
