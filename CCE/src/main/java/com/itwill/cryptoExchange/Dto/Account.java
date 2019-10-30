@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="Account")
+@Table(name="account")
 public class Account {
 	
 	@Id
@@ -32,13 +32,7 @@ public class Account {
 	private int a_bal;
 	
 	
-	@OneToMany(mappedBy="a_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-	private List<CurrentBalance> currentBalance;
-	
-	
-	@OneToMany(mappedBy="a_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-	private List<JumunDetail> jumunDetail;
-	
+
 	
 	public Account() {
 		

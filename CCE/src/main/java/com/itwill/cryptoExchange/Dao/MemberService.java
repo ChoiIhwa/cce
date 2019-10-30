@@ -8,11 +8,13 @@ public class MemberService {
 		
 		MemberDaoImpl md = new MemberDaoImpl();
 
-		Members members = new Members("hi1512", "qkqh", "ChoiIHwa", "hi1512@naver.com", "980223-2222222", "01091761598");
+		Members members = new Members("kai", "qkqh", "ChoiIHwa", "hi1512naver.com", "980223-2222222", "01091761598");
 		
 		md.insertMember(members);
 		
 		System.out.println("done!");
+		
+		
 	
 	}
 	

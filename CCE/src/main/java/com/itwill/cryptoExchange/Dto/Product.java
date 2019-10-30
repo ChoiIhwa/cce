@@ -4,14 +4,20 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Product")
+@Table(name="product")
 public class Product {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="p_no")
 	private int p_no;
 	
@@ -22,14 +28,10 @@ public class Product {
 	private String p_desc;
 	
 	
-	@OneToMany(mappedBy="p_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@OneToMany(targetEntity = Booking.class ,mappedBy="p_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	private List<Booking> booking;
 	
-	@OneToMany(mappedBy="p_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-	private List<CurrentBalance> currentBalance;
-	
-	@OneToMany(mappedBy="p_no" ,cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-	private List<JumunDetail> jumunDetail;
+
 	
 	public Product() {
 		

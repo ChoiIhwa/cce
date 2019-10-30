@@ -11,14 +11,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Booking")
+@Table(name="booking")
 public class Booking {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="b_no")
 	private int b_no;
 	
-	@ManyToOne(targetEntity=Members.class, cascade= CascadeType.ALL)
+	@ManyToOne(targetEntity=Members.class)
 	@JoinColumn(name="Member_m_no")
 	private int m_no;
 	

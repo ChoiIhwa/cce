@@ -2,6 +2,7 @@ package com.itwill.cryptoExchange.Dto;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -10,10 +11,11 @@ import javax.persistence.Table;
 
 
 
-@Entity
+@Embeddable
 @Table(name="cur_bal")
 public class CurrentBalance {
 	
+
 	@ManyToOne(targetEntity=Account.class,
 			cascade= {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	@JoinColumn(name="Account_a_no")
@@ -29,6 +31,7 @@ public class CurrentBalance {
 	public CurrentBalance() {
 		
 	}
+	
 	
 	
 	
