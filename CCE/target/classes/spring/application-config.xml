@@ -7,12 +7,15 @@
     
    <!-- Uncomment and add your base-package here:  -->
      <context:component-scan
-            base-package="com.itwill.cryptoExchange.Dto"/> 
+            base-package="com.itwill.cryptoExchange.dto"/> 
+     <context:component-scan
+            base-package="com.itwill.cryptoExchange.dao"/> 
+            
 	<bean  id="SessionFactory" 
 			class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
+		<!-- <property name="dataSource" ref="dataSource"/> -->
 		<property name="configLocation" 
-		          value="classpath:hibernate.config.xml"/>     
+		          value="classpath:hibernate.cfg.xml"/>     
 	</bean>
 	
 </beans>

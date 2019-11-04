@@ -11,8 +11,8 @@
         <!-- JDBC Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://127.0.0.1:3306/crypto_currency_exchange?serverTimezone=UTC</property>
-        <property name="connection.username">cce</property>
-        <property name="connection.password">cce</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
 
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">10</property>
@@ -27,12 +27,12 @@
 
       <!-- Set the current session context -->
       <property name="current_session_context_class">thread</property>
-      <mapping class="com.itwill.cryptoExchange.Dto.Members"/> 
-      <mapping class="com.itwill.cryptoExchange.Dto.Booking"/> 
-      <mapping class="com.itwill.cryptoExchange.Dto.Product"/> 
-      <mapping class="com.itwill.cryptoExchange.Dto.CurrentBalance"/> 
-      <mapping class="com.itwill.cryptoExchange.Dto.JumunDetail"/> 
-      <mapping class="com.itwill.cryptoExchange.Dto.Account"/> 
+      <mapping class="com.itwill.cryptoExchange.dto.Members"/> 
+      <mapping class="com.itwill.cryptoExchange.dto.Booking"/> 
+      <mapping class="com.itwill.cryptoExchange.dto.Product"/> 
+      <mapping class="com.itwill.cryptoExchange.dto.CurrentBalance"/> 
+      <mapping class="com.itwill.cryptoExchange.dto.JumunDetail"/> 
+      <mapping class="com.itwill.cryptoExchange.dto.Account"/> 
     </session-factory>
 
 </hibernate-configuration>

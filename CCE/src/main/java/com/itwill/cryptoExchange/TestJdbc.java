@@ -8,8 +8,8 @@ public class TestJdbc {
    public static void main(String[] args) {
       
       String jdbcUrl="jdbc:mysql://127.0.0.1:3306/crypto_currency_exchange?serverTimezone=UTC";
-      String user = "cce";
-      String pass = "cce";
+      String user = "root";
+      String pass = "root";
       
       try {
     	  
